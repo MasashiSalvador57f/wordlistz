@@ -1,0 +1,8 @@
+hash: 1ba291948a39200875de5cb1c5302485f5329c8c6db6878b4a00cd34f25ce0c7
+updated: 2016-11-12T23:03:08.360319977+09:00
+imports:
+- name: bitbucket.org/liamstask/goose
+  version: 8488cc47d90c8a502b1c41a462a6d9cc8ee0a895
+  subpackages:
+  - cmd/goose
+devImports: []

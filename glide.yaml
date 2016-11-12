@@ -1,2 +1,5 @@
 package: github.com/MasashiSalvador57f/wordlistz
-import: []
+import:
+- package: bitbucket.org/liamstask/goose
+  subpackages:
+  - cmd/goose

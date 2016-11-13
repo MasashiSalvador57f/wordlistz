@@ -4,7 +4,7 @@
 CREATE TABLE IF NOT EXISTS `word` (
     `id`         BIGINT(20) UNSIGNED NOT NULL PRIMARY KEY,
     `name`       VARCHAR(40) NOT NULL,
-    `word_type`  TINYINT(3), 
+    `word_type`  TINYINT(3)  NOT NULL, 
     `meaning`    TEXT NOT NULL,
     `created_at` DATETIME NOT NULL,
     `updated_at` DATETIME NOT NULL

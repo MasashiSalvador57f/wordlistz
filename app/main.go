@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/xorm"
 	"gopkg.in/yaml.v2"
 )
 
@@ -13,8 +15,12 @@ const AppEnvironment = "development"
 // DBConf contains DBSetting for connecting Database
 var DBConf DBSetting
 
+// Engine is a engine that represents ...
+var engine *xorm.Engine
+
 func init() {
-	buf, err := ioutil.ReadFile("config/database/development.yaml")
+	dbConfigPath := fmt.Sprintf("app/config/database/%s.yaml", AppEnvironment)
+	buf, err := ioutil.ReadFile(dbConfigPath)
 	if err != nil {
 		panic(err)
 	}
@@ -23,6 +29,8 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	dsn := fmt.Sprintf("%s:%s@%s?charset=utf8", DBConf.User, DBConf.Password, DBConf.Database)
+	engine, err = xorm.NewEngine("mysql", dsn)
 }
 
 // DBSetting is database configuration for application.
@@ -34,4 +42,5 @@ type DBSetting struct {
 
 func main() {
 	fmt.Println("Hello world")
+	fmt.Printf("%v", engine)
 }

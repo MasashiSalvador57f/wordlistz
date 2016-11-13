@@ -14,7 +14,7 @@ const AppEnvironment = "development"
 var DBConf DBSetting
 
 func init() {
-	buf, err := ioutil.ReadFile("config/database.yaml")
+	buf, err := ioutil.ReadFile("config/database/development.yaml")
 	if err != nil {
 		panic(err)
 	}
@@ -23,19 +23,13 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("----")
-	fmt.Println(DBConf.Database)
-	fmt.Println(DBConf.Password)
-	fmt.Println(DBConf.User)
-	fmt.Println("----")
-	fmt.Printf("%v", DBConf)
 }
 
 // DBSetting is database configuration for application.
 type DBSetting struct {
 	User     string `yaml:"user"`
 	Database string `yaml:"database"`
-	Password string `yaml:" password"`
+	Password string `yaml:"password"`
 }
 
 func main() {

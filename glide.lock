@@ -1,8 +1,10 @@
-hash: 1ba291948a39200875de5cb1c5302485f5329c8c6db6878b4a00cd34f25ce0c7
-updated: 2016-11-12T23:03:08.360319977+09:00
+hash: 1f95cb3c07f0bca5502be5ea9225f1bf8750e3a7e9b2998465b4dd8d4f71d4d2
+updated: 2016-11-13T15:20:58.272360705+09:00
 imports:
 - name: bitbucket.org/liamstask/goose
   version: 8488cc47d90c8a502b1c41a462a6d9cc8ee0a895
   subpackages:
   - cmd/goose
+- name: github.com/go-xorm/xorm
+  version: f31f5520266c61e9f4d0881654415328c23ba884
 devImports: []

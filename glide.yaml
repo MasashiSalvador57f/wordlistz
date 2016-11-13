@@ -3,3 +3,4 @@ import:
 - package: bitbucket.org/liamstask/goose
   subpackages:
   - cmd/goose
+- package: github.com/go-xorm/xorm
